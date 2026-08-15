@@ -12,6 +12,8 @@ export const personalInfo = {
   location: "Madurai / Chennai, Tamil Nadu, India",
   email: "r.mahesh2903@gmail.com",
   phone: "+91 8778977606",
+  github: "https://github.com/Maheshkumar293",
+  linkedin: "https://www.linkedin.com/in/maheshkumar-r-64614920b/",
   status: "Open to Software Engineering Opportunities",
   stats: [
     { label: "Professional Experience", value: "2+ Years", detail: "Development & IT Infrastructure" },

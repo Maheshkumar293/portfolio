@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { SectionHeader } from '../layout/SectionHeader';
 import { personalInfo } from '../../data/portfolioData';
-import { Mail, Phone, MapPin, Send, Copy, Check, Sparkles, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Copy, Check, Sparkles, MessageSquare, ExternalLink } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from '../ui/SocialIcons';
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -135,6 +136,48 @@ export const ContactSection = () => {
                   {copiedField === 'phone' ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
+
+              {/* GitHub Card */}
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between gap-3 group hover:border-sky-500/40 transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 shrink-0">
+                    <GithubIcon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="font-mono text-[10px] text-slate-500 uppercase">GITHUB</div>
+                    <div className="font-mono text-xs font-semibold text-slate-200 group-hover:text-sky-400 transition-colors">
+                      github.com/Maheshkumar293
+                    </div>
+                  </div>
+                </div>
+                <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-sky-400 transition-colors shrink-0" />
+              </a>
+
+              {/* LinkedIn Card */}
+              <a
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center justify-between gap-3 group hover:border-sky-500/40 transition-colors"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 shrink-0">
+                    <LinkedinIcon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="font-mono text-[10px] text-slate-500 uppercase">LINKEDIN</div>
+                    <div className="font-mono text-xs font-semibold text-slate-200 group-hover:text-sky-400 transition-colors">
+                      linkedin.com/in/maheshkumar-r
+                    </div>
+                  </div>
+                </div>
+                <ExternalLink className="w-4 h-4 text-slate-500 group-hover:text-sky-400 transition-colors shrink-0" />
+              </a>
 
               {/* Location Card */}
               <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-3">

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, FileText, Send, Sparkles, Code2, Server, Database, Cloud } from 'lucide-react';
 import { personalInfo, heroTechFloating } from '../../data/portfolioData';
+import { GithubIcon, LinkedinIcon } from '../ui/SocialIcons';
 
 export const HeroSection = ({ onOpenResume }) => {
   const techIcons = {
@@ -54,37 +55,67 @@ export const HeroSection = ({ onOpenResume }) => {
               {personalInfo.summary}
             </p>
 
-            {/* CTAs */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              {/* Primary CTA */}
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-sans font-semibold text-sm transition-all duration-200 shadow-lg shadow-sky-500/20 hover:shadow-sky-400/30 group"
-              >
-                <span>View My Work</span>
-                <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
-              </a>
+            {/* CTAs & Social Links */}
+            <div className="pt-2 space-y-4">
+              <div className="flex flex-wrap items-center gap-4">
+                {/* Primary CTA */}
+                <a
+                  href="#projects"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-sans font-semibold text-sm transition-all duration-200 shadow-lg shadow-sky-500/20 hover:shadow-sky-400/30 group"
+                >
+                  <span>View My Work</span>
+                  <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
+                </a>
 
-              {/* Secondary CTA - Download Resume */}
-              <a
-                href="/Maheshkumar_resume.pdf"
-                download="Maheshkumar_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-100 font-sans font-semibold text-sm border border-slate-800 hover:border-slate-700 transition-all duration-200 shadow-sm"
-              >
-                <FileText className="w-4 h-4 text-sky-400" />
-                <span>Download Resume</span>
-              </a>
+                {/* Secondary CTA - Download Resume */}
+                <a
+                  href="/Maheshkumar_resume.pdf"
+                  download="Maheshkumar_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-100 font-sans font-semibold text-sm border border-slate-800 hover:border-slate-700 transition-all duration-200 shadow-sm"
+                >
+                  <FileText className="w-4 h-4 text-sky-400" />
+                  <span>Download Resume</span>
+                </a>
 
-              {/* Small CTA */}
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-4 py-3 rounded-lg text-xs font-mono font-medium text-slate-400 hover:text-sky-300 hover:bg-slate-900/60 border border-transparent hover:border-slate-800 transition-all"
-              >
-                <Send className="w-3.5 h-3.5 text-sky-400" />
-                <span>Let's Connect</span>
-              </a>
+                {/* Small CTA */}
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-4 py-3 rounded-lg text-xs font-mono font-medium text-slate-400 hover:text-sky-300 hover:bg-slate-900/60 border border-transparent hover:border-slate-800 transition-all"
+                >
+                  <Send className="w-3.5 h-3.5 text-sky-400" />
+                  <span>Let's Connect</span>
+                </a>
+              </div>
+
+              {/* Developer Profile Social Links */}
+              <div className="flex items-center gap-3 pt-2">
+                <span className="font-mono text-xs text-slate-500 uppercase tracking-wider font-semibold">
+                  PROFILES:
+                </span>
+                <a
+                  href={personalInfo.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-sky-400 border border-slate-800 hover:border-sky-500/40 font-mono text-xs font-semibold transition-all duration-200 shadow-sm group"
+                  title="GitHub Profile"
+                >
+                  <GithubIcon className="w-4 h-4 text-slate-400 group-hover:text-sky-400 transition-colors" />
+                  <span>GitHub</span>
+                </a>
+
+                <a
+                  href={personalInfo.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900/90 hover:bg-slate-800 text-slate-200 hover:text-sky-400 border border-slate-800 hover:border-sky-500/40 font-mono text-xs font-semibold transition-all duration-200 shadow-sm group"
+                  title="LinkedIn Profile"
+                >
+                  <LinkedinIcon className="w-4 h-4 text-slate-400 group-hover:text-sky-400 transition-colors" />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
             </div>
           </motion.div>
 

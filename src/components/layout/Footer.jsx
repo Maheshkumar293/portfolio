@@ -1,6 +1,7 @@
 import React from 'react';
 import { personalInfo } from '../../data/portfolioData';
 import { ArrowUp, Mail, Phone, Terminal } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from '../ui/SocialIcons';
 
 export const Footer = () => {
   const scrollToTop = () => {
@@ -59,10 +60,10 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Direct */}
+          {/* Contact Direct & Social */}
           <div className="md:col-span-3 space-y-3">
             <h4 className="font-mono text-xs uppercase tracking-widest text-slate-400 font-semibold">
-              Direct Contact
+              Connect & Reach Out
             </h4>
             <div className="space-y-2.5 text-sm text-slate-400">
               <a
@@ -78,6 +79,24 @@ export const Footer = () => {
               >
                 <Phone className="w-4 h-4 text-sky-400" />
                 <span className="font-mono text-xs">{personalInfo.phone}</span>
+              </a>
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-sky-400 transition-colors group"
+              >
+                <GithubIcon className="w-4 h-4 text-sky-400" />
+                <span className="font-mono text-xs">GitHub / Maheshkumar293</span>
+              </a>
+              <a
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-sky-400 transition-colors group"
+              >
+                <LinkedinIcon className="w-4 h-4 text-sky-400" />
+                <span className="font-mono text-xs">LinkedIn / Maheshkumar R</span>
               </a>
             </div>
           </div>
